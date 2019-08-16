@@ -1,5 +1,6 @@
 body{
  background-color: blue;
+ text-align:center;
 
 }
 h1{
@@ -10,4 +11,7 @@ h1{
 }
 p{
     text-align: center;
+}
+form{
+    
 }

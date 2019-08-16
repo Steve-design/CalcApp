@@ -10,22 +10,24 @@
 <body>
     <h1>Birthday Calculation Application</h1>
     <p> This is a web application that takes a user's birthday and calculates the day of the week they were born.</p>
-    <script src="js/scripts.js"></script>
-    <form action="/action_page.php" id="action">
+    
+    <form action="" id="action">
         Day:<br>
-        <input type="text" name="day" value="day">
+        <input type="text" name="day" value=""  id="day">
         <br>
         Month<br>
-        <input type="text" name="month" value="month">
+        <input type="text" name="month" value="" id="month">
         <br>
         Year:<br>
-        <input type="text" name="year" value="year">
+        <input type="text" name="year" value="" id="year">
         <br>
         Gender:<br>
         <input type="radio" name="gender" value="male">Male<br>
         <input type="radio" name="gender" value="female">Female<br><br>
         
-        <input type="button" value="Submit">
+        <input type="submit" value="Submit" name="submit" onclick="validate()">
       </form> 
+
+      <script src="./js/scripts.js"></script>
 </body> 
 </html>
