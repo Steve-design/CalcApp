@@ -1,3 +1,6 @@
+*body{
+    background-image:url("img/images.jpeg")
+}
 h1{
     text-align: center;
     background-color: mediumslateblue;
