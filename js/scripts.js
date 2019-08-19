@@ -78,13 +78,16 @@ function validate() {
             if(gender[i].checked){
                 alert(gender[i].value);
                 var gend = gender[i].value;
-                //return gend;
-                console.log(gend);
               
                 }
                
         }
     
+  }
+
+
+  var myObject = {
+    mDay:day,
   }
 }
   
@@ -96,33 +99,31 @@ function validate() {
       var year = valid.mYear;
       var gender = valid.mGender;
  
-//  var a = Math.floor((14 - m) / 12);
-//  var y = year - a;
-//   var m = m + 12 * a - 2;
-//   var dayOfTheWeek = (d + y + Math.floor(y / 4) - Math.floor(y / 100) +
-//   Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
-//   console.log(dayOfTheWeek);
-//   var daysOfaweek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',       
-//           'Thursday', 'Friday', 'Saturday');
+  var a = Math.floor((14 - m) / 12);
+ var y = year - a;
+  var m = m + 12 * a - 2;
+  var dayOfTheWeek = (d + y + Math.floor(y / 4) - Math.floor(y / 100) +
+ Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
+ console.log(dayOfTheWeek);
+ var daysOfaweek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',       
+       'Thursday', 'Friday', 'Saturday');
   
-//  var myDay = daysOfaweek[dayOfTheWeek];
-//  if (gender === male) {
-//  for (var k in maleAkan) {
-//          if (maleAkan.hasOwnProperty(k)) {
-//              if (k === myDay) {
-                 
-//                  alert("Bingo! Your Akan name is "+maleAkan[k]);
-//              }
-//          }
-//      }
-//   }else if(gender === female) {
-//      for (var k in femaleAkan) {
-//              if (femaleAkan.hasOwnProperty(k)) {
-//                  if (k === myDay){
-//                      alert("Bingo! Your Akan name is "+femaleAkan[k]);
-//                  }
-//              }
-//          }
-     
-//       }
+ var myDay = daysOfaweek[dayOfTheWeek];
+ if (gender === male) {
+ for (var k in maleAkan) {
+     if (maleAkan.hasOwnProperty(k)) {
+            if (k === myDay) {
+                              alert("Bingo! Your Akan name is "+maleAkan[k]);
+         }
+         }
+      }
+   }else if(gender === female) {
+     for (var k in femaleAkan) {
+            if (femaleAkan.hasOwnProperty(k)) {
+                if (k === myDay){
+                     alert("Bingo! Your Akan name is "+femaleAkan[k]);
+                 }
+             }
+                      }
+           }
     }
