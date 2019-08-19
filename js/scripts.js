@@ -88,6 +88,7 @@ function validate() {
 
   var myObject = {
     mDay:day,
+    mMonth:month,
   }
 }
   
