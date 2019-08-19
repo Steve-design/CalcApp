@@ -1,4 +1,4 @@
-var maleNames = {
+var maleAkan = {
   Sunday: 'Kwasi',
   Monday: 'Kwadwo',
   Tuesday: 'Kwabena',
@@ -7,7 +7,7 @@ var maleNames = {
   Friday: 'Kofi',
   Saturday: 'Kwame',
 };
-var femaleNames = {
+var femaleAkan = {
   Sunday: 'Akosua',
   Monday: 'Adwoa',
   Tuesday: 'Abenaa',
@@ -75,59 +75,52 @@ function validate() {
         for(i=0;i<gender.length; i++){
             if(gender[i].checked){
                 alert(gender[i].value);
+                var details={
+                  day:day,
+                  month:month,
+                  year:year,
+                  gender:gender
+                }
             }
         }
     }
     function execute(){
-      var a = validate();
-      var DD = parseInt(a.userDate);
-      var MM = parseInt(a.userMonth);
-      var newYear = a.userYear;
-      var YY = parseInt(newYear.slice(2,4));
-      var CC = parseInt(newYear.slice(0,2));
-      var newGender = a.userGender;
- //var weekDate = Math.floor((((CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7);
- // var a = (14 - month) / 12
-                                        //calculating dday of the week
- // var y = year - a                         // https://www.mindstick.com/blog/387/calculating-day-of-the-week-for-any-date-in-javascript
- //var m = month + 12 * a - 2
- // var d = (day + y + y / 4 - y / 100 + y / 400 + (31 * m / 12) % 7
- var a = Math.floor((14 - MM) / 12);
- var y = newYear - a;
-  var m = MM + 12 * a - 2;
-  var dayOfTheWeek = (DD + y + Math.floor(y / 4) - Math.floor(y / 100) +
-  Math.floor(newYear / 400) + Math.floor((31 * m) / 12)) % 7;
+      var valid = validate();
+      var d = parseInt(valid.day);
+      var m = parseInt(valid.month);
+      var year = valid.year;
+      var gender = valid.gender;
+ 
+ var a = Math.floor((14 - m) / 12);
+ var y = year - a;
+  var m = m + 12 * a - 2;
+  var dayOfTheWeek = (d + y + Math.floor(y / 4) - Math.floor(y / 100) +
+  Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
   console.log(dayOfTheWeek);
   var daysOfaweek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',       
           'Thursday', 'Friday', 'Saturday');
   
- var realDay = daysOfaweek[dayOfTheWeek];
- if (newGender === "male") {
- for (var name in maleNames) {
-         if (maleNames.hasOwnProperty(name)) {
-             if (name === realDay) {
-                 document.getElementById('ans').innerHTML = maleNames[name];
-                 document.getElementById('three').style.backgroundColor = "black";
-                 document.getElementById('three').style.color = "white";
-                 alert("Your Akan name is "+maleNames[name]);
+ var myDay = daysOfaweek[dayOfTheWeek];
+ if (gender === "male") {
+ for (var k in maleAkan) {
+         if (maleAkan.hasOwnProperty(k)) {
+             if (k === myDay) {
+                 
+                 alert("Bingo! Your Akan name is "+maleAkan[k]);
              }
          }
      }
-  }else if(newGender === "female") {
-     for (var name in maleNames) {
-             if (femaleNames.hasOwnProperty(name)) {
-                 if (name === realDay) {
-                     document.getElementById('ans').innerHTML = femaleNames[name];
-                     document.getElementById('three').style.backgroundColor = "black";
-                 document.getElementById('three').style.color = "white";
-                     alert("Your Akan name is "+femaleNames[name]);
+  }else if(gender === "female") {
+     for (var k in femaleAkan) {
+             if (femaleAkan.hasOwnProperty(k)) {
+                 if (k === myDay){
+                     alert("Bingo! Your Akan name is "+femaleAkan[k]);
                  }
              }
          }
      
       }
  }
- Collapse
  
  
  
