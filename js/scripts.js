@@ -90,11 +90,11 @@ function validate() {
     mDay:day,
     mMonth:month,
     mYear:year,
-    mGender,
+    mGender:gend,
   }
-}
-  
 
+  return myObject;
+}
     function myFunction(){
       var valid = validate();
       var d = parseInt(valid.mDay);
