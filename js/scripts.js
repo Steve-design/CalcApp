@@ -90,6 +90,7 @@ function validate() {
     mDay:day,
     mMonth:month,
     mYear:year,
+    mGender,
   }
 }
   
