@@ -10,8 +10,10 @@ h1{
     padding-bottom: 20px;
 }
 p{
-    text-align: center;
+    align-content: center;
+    width:40%;
+    padding-left: 400px;
 }
 form{
-    
+
 }
