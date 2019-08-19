@@ -84,7 +84,7 @@ function validate() {
             }
         }
     }
-    function execute(){
+    function myFunction(){
       var valid = validate();
       var d = parseInt(valid.day);
       var m = parseInt(valid.month);
