@@ -99,7 +99,7 @@ function validate() {
       var valid = validate();
       var d = parseInt(valid.mDay);
       var m = parseInt(valid.mMonth);
-      var year = valid.mYear;
+      var year= parseInt (valid.mYear);
       var gender = valid.mGender;
  
   var a = Math.floor((14 - m) / 12);
