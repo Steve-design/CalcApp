@@ -17,117 +17,118 @@ var femaleAkan = {
   Saturday: 'Ama',
 };
 function validate() {
-    var day = document.getElementById("day").value;
-    var month = document.getElementById("month").value;
-    var year = document.getElementById("year").value;
-    var gender = document.getElementsByName("gender1");
+  var day = document.getElementById("day").value;
+  var month = document.getElementById("month").value;
+  var year = document.getElementById("year").value;
+  var gender = document.getElementsByName("gender1");
 
-  
-    if (day == "" || day == null) {
-      alert("Day is required");
-    } else {
-      if (!isNaN(day)) {
-        if (day <= 0 || day > 31) {
-          alert("Day is invalid");
-        } else {
-          alert(day);
-          
-        }
+
+  if (day == "" || day == null) {
+    alert("Day is required");
+  } else {
+    if (!isNaN(day)) {
+      if (day <= 0 || day > 31) {
+        alert("Day is invalid");
       } else {
-        alert("Number required");
+        // alert(day);
+
       }
-    }
-  
-    if (month == "" || month == null) {
-      alert("Month is empty");
     } else {
-      if (!isNaN(month)) {
-        if (month <= 0 || month > 12) {
-          alert("Month is invalid");
-          
-        } else {
-          alert(month);
-          
-        }
+      alert("Number required");
+    }
+  }
+
+  if (month == "" || month == null) {
+    alert("Month is empty");
+  } else {
+    if (!isNaN(month)) {
+      if (month <= 0 || month > 12) {
+        alert("Month is invalid");
+
       } else {
-        alert("Number required");
+        // alert(month);
+
       }
-    }
-  
-  
-    if (year == "" || year == null) {
-      alert("Year is empty");
     } else {
-      if (!isNaN(year)) {
-        if (year <= 0 || year > 2019) {
-          alert("Year is invalid");
-        } else {
-          alert(year);
-          
-        }
+      alert("Number required");
+    }
+  }
+
+
+  if (year == "" || year == null) {
+    alert("Year is empty");
+  } else {
+    if (!isNaN(year)) {
+      if (year <= 0 || year > 2019) {
+        alert("Year is invalid");
       } else {
-        alert("Number required");
+        // alert(year);
+
       }
-    }
-  
-   
-    if(gender[0].checked===false && gender[1].checked ===false){
-        alert("Select gender");
     } else {
-        for(i=0;i<gender.length; i++){
-            if(gender[i].checked){
-                alert(gender[i].value);
-                var gend = gender[i].value;
-              
-                }
-               
-        }
-    
+      alert("Number required");
+    }
+  }
+
+
+  if (gender[0].checked === false && gender[1].checked === false) {
+    alert("Select gender");
+  } else {
+    for (i = 0; i < gender.length; i++) {
+      if (gender[i].checked) {
+        // alert(gender[i].value);
+        var gend = gender[i].value;
+
+      }
+
+    }
+
   }
 
 
   var myObject = {
-    mDay:day,
-    mMonth:month,
-    mYear:year,
-    mGender:gend,
+    mDay: day,
+    mMonth: month,
+    mYear: year,
+    mGender: gend,
   }
 
   return myObject;
 }
-    function myFunction(){
-      var valid = validate();
-      var d = parseInt(valid.mDay);
-      var m = parseInt(valid.mMonth);
-      var year= parseInt (valid.mYear);
-      var gender = valid.mGender;
- 
-      alert(d +m+year+gender);
+function myFunction() {
+  var valid = validate();
+  var d = parseInt(valid.mDay);
+  var m = parseInt(valid.mMonth);
+  var year = parseInt(valid.mYear);
+  var gender = valid.mGender;
+
+  // alert(d + m + year + gender);
   var a = Math.floor((14 - m) / 12);
- var y = year - a;
+  var y = year - a;
   var m = m + 12 * a - 2;
   var dayOfTheWeek = (d + y + Math.floor(y / 4) - Math.floor(y / 100) +
- Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
- console.log(dayOfTheWeek);
- var daysOfaweek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',       
-       'Thursday', 'Friday', 'Saturday');
-  
- var myDay = daysOfaweek[dayOfTheWeek];
- if (gender === male) {
- for (var k in maleAkan) {
-     if (maleAkan.hasOwnProperty(k)) {
-            if (k === myDay) {
-                              alert("Bingo! Your Akan name is "+maleAkan[k]);
-         }
-         }
+    Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
+  console.log(dayOfTheWeek);
+  var daysOfaweek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',
+    'Thursday', 'Friday', 'Saturday');
+
+  var myDay = daysOfaweek[dayOfTheWeek];
+  alert(myDay);
+  if (gender === "male") {
+    for (var k in maleAkan) {
+      if (maleAkan.hasOwnProperty(k)) {
+        if (k === myDay) {
+          alert("Bingo! Your Akan name is " + maleAkan[k]);
+        }
       }
-   }else if(gender === female) {
-     for (var k in femaleAkan) {
-            if (femaleAkan.hasOwnProperty(k)) {
-                if (k === myDay){
-                     alert("Bingo! Your Akan name is "+femaleAkan[k]);
-                 }
-             }
-                      }
-           }
     }
+  } else if (gender === "female") {
+    for (var k in femaleAkan) {
+      if (femaleAkan.hasOwnProperty(k)) {
+        if (k === myDay) {
+          alert("Bingo! Your Akan name is " + femaleAkan[k]);
+        }
+      }
+    }
+  }
+}
