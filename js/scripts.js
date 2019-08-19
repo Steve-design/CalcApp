@@ -79,7 +79,7 @@ function validate() {
         }
     }
     function execute(){
-      var a = validation();
+      var a = validate();
       var DD = parseInt(a.userDate);
       var MM = parseInt(a.userMonth);
       var newYear = a.userYear;
@@ -88,9 +88,9 @@ function validate() {
       var newGender = a.userGender;
  //var weekDate = Math.floor((((CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7);
  // var a = (14 - month) / 12
- //                                       //calculating dday of the week
- // var y = year - a                          //https://www.mindstick.com/blog/387/calculating-day-of-the-week-for-any-date-in-javascript
- // var m = month + 12 * a - 2
+                                        //calculating dday of the week
+ // var y = year - a                         // https://www.mindstick.com/blog/387/calculating-day-of-the-week-for-any-date-in-javascript
+ //var m = month + 12 * a - 2
  // var d = (day + y + y / 4 - y / 100 + y / 400 + (31 * m / 12) % 7
  var a = Math.floor((14 - MM) / 12);
  var y = newYear - a;
