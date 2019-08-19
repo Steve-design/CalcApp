@@ -102,6 +102,7 @@ function validate() {
       var year= parseInt (valid.mYear);
       var gender = valid.mGender;
  
+      alert(d +m+year+gender);
   var a = Math.floor((14 - m) / 12);
  var y = year - a;
   var m = m + 12 * a - 2;
